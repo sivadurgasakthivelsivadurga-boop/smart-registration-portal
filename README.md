@@ -1,16 +1,39 @@
-# Smart Registration Portal
+# Smart Registration Portal - Backend API
 
-A full-stack registration website.
+This is the Python Flask REST API backend for the **Smart Registration Portal**.
 
-## Features
-- 10 Registration Forms
-- React Frontend
-- Python Flask Backend
-- MySQL Database
-- REST API
-- Admin Dashboard
+## Tech Stack
+- **Python 3.14**
+- **Flask** & **Flask-CORS**
+- **Flask-SQLAlchemy**
+- **PyMySQL** & **SQLite (fallback support)**
+- **Werkzeug Security** (Password Hashing)
+- **PyJWT** (JSON Web Tokens)
 
-## Technologies
-- React
-- Flask
-- MySQL
+## Setup & Running Instructions
+
+### 1. Install Dependencies
+```powershell
+python -m pip install -r requirements.txt
+```
+
+### 2. Configure Environment Variables
+Copy `.env.example` to `.env`:
+```powershell
+Copy-Item .env.example .env
+```
+Ensure your MySQL database credentials match in `.env`:
+```env
+DATABASE_URL=mysql+pymysql://root:yourpassword@localhost:3306/registration_portal
+```
+
+### 3. Run Backend Server
+```powershell
+python app.py
+```
+The backend server runs on `http://localhost:5000`.
+
+### 4. Run Automated Backend Tests
+```powershell
+python -m unittest discover -s tests
+```
